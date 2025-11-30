@@ -15,5 +15,6 @@ COPY --from=builder /app/wrapper-manager .
 RUN apt-get update && apt-get install -y ca-certificates
 RUN chmod +x ./wrapper-manager
 
-ENTRYPOINT ["./wrapper-manager --host 0.0.0.0"]
+# CORRECT
+ENTRYPOINT ["./wrapper-manager", "--host", "0.0.0.0"]
 EXPOSE 8080
